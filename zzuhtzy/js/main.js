@@ -84,8 +84,6 @@ function issues(id){
             });
 
             highlight();
-
-            duoshuo(id);
         }
     });
 }
@@ -93,8 +91,7 @@ function issues(id){
 function htmlWrite(title, h1, h2, home, homeBlog, vogithub, footer_title){
     $("title").html(title);
     $("#header_h1").html(h1);
-    $("#header_h2").html("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + h2);
-
+    
     if(home == undefined){
         $("#home").hide();
     }else{
@@ -119,12 +116,12 @@ function htmlWrite(title, h1, h2, home, homeBlog, vogithub, footer_title){
 }
 
 function MIT(){
-    htmlWrite("MIT", "MIT", "LICENSE", "/", undefined, undefined, "MIT");
+    htmlWrite("MIT", "LICENSE", "/", undefined, undefined, "MIT");
     issues(12);
 }
 
 function index(){
-    htmlWrite("Blog", "Blog", "My Blog", "/", undefined, undefined, "Blog");
+    htmlWrite("Blog", "Blog", "/", undefined, undefined, "Blog");
     labels("Blog");
 }
 
@@ -148,25 +145,23 @@ router.init();
 function go(){
     var url = location.href;
     console.log(url);
-    if(url.includes("renyuzhuo.cn/blog/#/issues")
-        || url.includes("renyuzhuo.cn/#/issues")){
+    if(url.includes("renyuzhuo.cn/#/issues")){
         console.log("issues");
         router.init(url);
         return;
     }
-    $("#duoshuo").hide();
     if(url.includes("renyuzhuo.cn/MIT")){
         console.log("MIT");
         MIT();
         return;
     }
-    if(url.includes("renyuzhuo.cn/index") || url.includes("renyuzhuo.cn/index.html") || url.length == 20 || url.length == 19){
+    if(url.includes("renyuzhuo.cn/index") || url.includes("renyuzhuo.cn/index.html") || url.length == 20 || url.length == 19 || url.includes("127.0.0.1:3000/404.html")){
         console.log("index");
         index();
         return;
     }
     console.log("404");
-    // location.href = "renyuzhuo.cn";
+    location.href = "https://renyuzhuo.cn";
     return;
 }
 
@@ -174,21 +169,4 @@ go();
 
 function goBack() {
     window.history.back();
-}
-
-var duoshuoQuery = {short_name:"renyuzhuo"};
-function duoshuo(id) {
-    $("#duoshuo").attr("data-thread-key", id);
-    $("#duoshuo").attr("data-title", "issues_" + id);
-    $("#duoshuo").attr("data-url", location.href);
-    $("#duoshuo").show();
-
-    var ds = document.createElement('script');
-    ds.type = 'text/javascript';
-    ds.async = false;
-    ds.src = './zzuhtzy/js/embed.js';
-    console.log(ds.src);
-    ds.charset = 'UTF-8';
-    (document.getElementsByTagName('head')[0] 
-    || document.getElementsByTagName('body')[0]).appendChild(ds);
 }
