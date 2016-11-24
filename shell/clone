@@ -1,0 +1,6 @@
+for i in $*
+do
+    echo "git clone $i"
+    git clone $i
+done
+exit 0

@@ -1,0 +1,12 @@
+pwd | cd 
+pwd
+
+read -r -p "删除 */.git文件 [Y/n]:" del
+case $del in
+    [Nn][Oo]|[Nn])
+        ;;
+    *)
+        rm -rf */.git
+        ;;
+esac
+exit 0

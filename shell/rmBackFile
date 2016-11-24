@@ -1,0 +1,13 @@
+pwd | cd 
+pwd
+ls *~
+
+read -r -p "删除 ~文件 [Y/n]:" del
+case $del in
+    [Nn][Oo]|[Nn])
+        ;;
+    *)
+        rm -rf *~
+        ;;
+esac
+exit 0
