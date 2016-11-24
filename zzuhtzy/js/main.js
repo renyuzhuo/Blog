@@ -27,7 +27,7 @@ function labels(label){
     }
 
     $.ajax({
-        url:baseUrl + "?sort=updated&labels=" + label,
+        url:baseUrl + "?sort=created&labels=" + label,
         data:{
             filter       : 'created',
             access_token : _config['access_token'],
