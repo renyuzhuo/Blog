@@ -1,10 +1,10 @@
 Ractive.DEBUG = false;
 
 var _config = {
-    blog_name       : 'RSpace',
-    owner           : 'RWebRTC',
+    blog_name       : 'Blog',
+    owner           : 'renyuzhuo',
     repo            : 'Blog',
-    access_token    : '587a3dc4eb51c425d1851'+'86d77cd456eabe1ca71'
+    access_token    : '6c42564c0e7fb298df020'+'38caae586fcdd0ef18d'
 }
 
 var baseUrl = "https://api.github.com/repos/"+_config['owner']+"/"+_config['repo']+"/issues";
