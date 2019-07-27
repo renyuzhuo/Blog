@@ -161,7 +161,7 @@ function go(){
         return;
     }
     console.log("404");
-    if(url !== "https://renyuzhuo.cn"){
+    if(url !== "https://renyuzhuo.cn" && url !== "https://renyuzhuo.cn/"){
         location.href = "https://renyuzhuo.cn";
     }
     return;
