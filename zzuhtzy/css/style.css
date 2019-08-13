@@ -3,16 +3,16 @@
 	padding: 0;
 	outline: 0;
 }
-.side-bar a,.renyuzhuo-chat-tips i {
+
+.side-bar a,.renyuzhuo-chat-tips i,.renyuzhuo-qq-tips i {
 	background-image: url(https://renyuzhuo.cn/zzuhtzy/images/share.png);
 	background-repeat: no-repeat;
 }
-/*右侧悬浮icon*/
 .side-bar {
 	width: 66px;
 	position: fixed;
-	bottom: 20px;
-	right: 25px;
+	bottom: 8px;
+	right: 8px;
 	font-size: 0;
 	line-height: 0;
 	z-index: 100;
@@ -22,14 +22,20 @@
 	height: 66px;
 	display: inline-block;
 	background-color: #dddddd;
-	margin-bottom: 2px;
+	margin-bottom: 5px;
 }
 .side-bar a:hover {
 	background-color: #669fdd;
 }
+
 .side-bar .icon-qq {
 	background-position: 0 -62px;
+	position: relative;
 }
+.side-bar .icon-qq:hover .renyuzhuo-qq-tips {
+	display: block;
+}
+
 .side-bar .icon-chat {
 	background-position: 0 -130px;
 	position: relative;
@@ -37,17 +43,13 @@
 .side-bar .icon-chat:hover .renyuzhuo-chat-tips {
 	display: block;
 }
-.side-bar .icon-blog {
-	background-position: 0 -198px;
-}
+
 .side-bar .icon-mail {
 	background-position: 0 -266px;
 }
-.side-bar .icon-totop {
-	background-position: 0 -334px;
-}
+
 .renyuzhuo-chat-tips {
-	padding: 20px;
+	padding: 3px;
 	border: 1px solid #d1d2d6;
 	position: absolute;
 	right: 78px;
@@ -65,6 +67,29 @@
 	background-position:-88px -350px;
 }
 .renyuzhuo-chat-tips img {
+	width: 138px;
+	height: 138px;
+}
+
+.renyuzhuo-qq-tips {
+	padding: 3px;
+	border: 1px solid #d1d2d6;
+	position: absolute;
+	right: 78px;
+	top: -55px;
+	background-color: #ffffff;
+	display: none;
+}
+.renyuzhuo-qq-tips i {
+	width: 9px;
+	height: 16px;
+	display: inline-block;
+	position: absolute;
+	right: -9px;
+	top: 80px;
+	background-position:-88px -350px;
+}
+.renyuzhuo-qq-tips img {
 	width: 138px;
 	height: 138px;
 }
