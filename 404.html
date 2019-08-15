@@ -49,6 +49,7 @@
 
 
 
+
             </script>
             <script type="text/ractive" id="detailTpl">
                 {{#post}}
@@ -60,6 +61,7 @@
                 <div class="content">{{{markdown2HTML(body)}}}</div>
                 <hr>
                 {{/post}}
+
 
 
             </script>
@@ -87,10 +89,7 @@
 </div>
 <script type="text/javascript">
     if (IsPhone()) {
-        alert("in");
         $(".side-bar").hide();
-    } else {
-        alert("out")
     }
 </script>
 </body>

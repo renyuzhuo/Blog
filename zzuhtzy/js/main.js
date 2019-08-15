@@ -1,13 +1,13 @@
 Ractive.DEBUG = false;
 
-var _config = {
+const _config = {
     blog_name: 'Blog',
     owner: 'renyuzhuo',
     repo: 'Blog',
     access_token: '6c42564c0e7fb298df020' + '38caae586fcdd0ef18d'
-}
+};
 
-var baseUrl = "https://api.github.com/repos/" + _config['owner'] + "/" + _config['repo'] + "/issues";
+const baseUrl = "https://api.github.com/repos/" + _config['owner'] + "/" + _config['repo'] + "/issues";
 
 function highlight() {
     $('pre code').each(function (i, block) {
@@ -125,13 +125,13 @@ function index() {
     labels("Blog");
 }
 
-var helpers = Ractive.defaults.data;
+const helpers = Ractive.defaults.data;
 helpers.markdown2HTML = function (content) {
     return marked(content);
-}
+};
 helpers.formatTime = function (time) {
     return time.substr(0, 10);
-}
+};
 
 var routes = {
     '/': index,
@@ -182,12 +182,15 @@ function goBack() {
 /**
  * @return {boolean}
  */
-function IsPhone(){
-    var userAgentInfo = navigator.userAgent;
-    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
-    var flag = true;
-    for (var v = 0; v < Agents.length; v++) {
-        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+function IsPhone() {
+    const userAgentInfo = navigator.userAgent;
+    const Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
+    let flag = true;
+    for (let v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) {
+            flag = false;
+            break;
+        }
     }
     return !flag;
 }
