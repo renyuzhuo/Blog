@@ -179,15 +179,15 @@ function goBack() {
     window.history.back();
 }
 
-
-const os = function () {
-    const ua = navigator.userAgent,
-        isAndroid = /(?:Android)/.test(ua),
-        isFireFox = /(?:Firefox)/.test(ua),
-        isTablet = /(?:iPad|PlayBook)/.test(ua) || (isAndroid && !/(?:Mobile)/.test(ua)) || (isFireFox && /(?:Tablet)/.test(ua)),
-        isPhone = /(?:iPhone)/.test(ua) && !isTablet;
-    return {
-        isPhone: isPhone,
-        isAndroid: isAndroid,
-    };
+/**
+ * @return {boolean}
+ */
+function IsPhone(){
+    var userAgentInfo = navigator.userAgent;
+    var Agents = new Array("Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod");
+    var flag = true;
+    for (var v = 0; v < Agents.length; v++) {
+        if (userAgentInfo.indexOf(Agents[v]) > 0) { flag = false; break; }
+    }
+    return !flag;
 }
