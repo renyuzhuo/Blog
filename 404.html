@@ -48,6 +48,7 @@
                 </ul>
 
 
+
             </script>
             <script type="text/ractive" id="detailTpl">
                 {{#post}}
@@ -59,6 +60,7 @@
                 <div class="content">{{{markdown2HTML(body)}}}</div>
                 <hr>
                 {{/post}}
+
 
             </script>
         </section>
@@ -83,10 +85,13 @@
     </a>
     <a target="_blank" href="mailto:blog@renyuzhuo.cn" class="icon-mail">Email</a>
 </div>
-</body>
 <script type="text/javascript">
-    if(os.isAndroid || os.isPhone){
-        $('.side-bar').hide();
+    if (os.isAndroid || os.isPhone) {
+        alert("in");
+        $(".side-bar").hide();
+    } else {
+        alert("out")
     }
 </script>
+</body>
 </html>
