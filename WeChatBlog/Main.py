@@ -2,7 +2,10 @@
 # -*- coding:utf-8 -*-
 
 import json
+import ssl
 import urllib.request
+
+import certifi
 
 file_name = 'TextBlog.json'
 url = 'https://api.github.com/repos/renyuzhuo/Blog/issues?labels=TextBlog&state=all'
@@ -14,7 +17,7 @@ if __name__ == '__main__':
                'content-type': 'application/json',
                'Accept': 'application/vnd.github.v3+json'}
     request = urllib.request.Request(url, headers=headers)
-    json_string = urllib.request.urlopen(request)
+    json_string = urllib.request.urlopen(request, context=ssl.create_default_context(cafile=certifi.where()))
     issuesList = json.load(json_string)
     for item in issuesList:
         blogItem = {
