@@ -120,6 +120,11 @@ function MIT() {
     issues(12);
 }
 
+function donate() {
+    htmlWrite("DONATE", "DONATE", "/", undefined, undefined, "DONATE");
+    issues(47);
+}
+
 function index() {
     htmlWrite("Blog", "Blog", "/", undefined, undefined, "Blog");
     labels("Blog");
@@ -136,7 +141,8 @@ helpers.formatTime = function (time) {
 var routes = {
     '/': index,
     'issues/:postId': issues,
-    'MIT': MIT
+    'MIT': MIT,
+    'donate': donate
 };
 
 var router = Router(routes);
@@ -158,6 +164,11 @@ function go() {
     if (url.includes("renyuzhuo.cn/MIT")) {
         console.log("MIT");
         MIT();
+        return;
+    }
+    if (url.includes("renyuzhuo.cn/donate")) {
+        console.log("Donate");
+        donate();
         return;
     }
     if (url.includes("renyuzhuo.cn/index") || url.includes("renyuzhuo.cn/index.html") || url.length == 21 || url.length == 20 || url.includes("127.0.0.1:3000/404.html")) {
