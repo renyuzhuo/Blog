@@ -30,7 +30,7 @@ function labels(label) {
         url: baseUrl + "?sort=created&labels=" + label,
         data: {
             filter: 'created',
-            access_token: _config['access_token'],
+            Authorization: _config['access_token'],
             per_page: 10000
         },
         beforeSend: function () {
@@ -71,7 +71,7 @@ function issues(id) {
     $.ajax({
         url: baseUrl + "/" + id,
         data: {
-            access_token: _config['access_token']
+            Authorization: _config['access_token']
         },
         beforeSend: function () {
             showLoading();
