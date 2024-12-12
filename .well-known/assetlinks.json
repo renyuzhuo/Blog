@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "cn.renyuzhuo.qrsnap",
+      "sha256_cert_fingerprints": [
+        "57:00:EF:B6:8C:F4:F5:06:F1:B5:02:8E:11:42:18:DD:A5:31:D5:E5:48:89:43:CE:D9:F9:E3:73:67:CD:E4:B0"
+      ]
+    }
+  }
+]
