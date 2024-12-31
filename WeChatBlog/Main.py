@@ -15,6 +15,7 @@ if __name__ == '__main__':
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 '
                              'Safari/537.36',
                'content-type': 'application/json',
+               'Headers': 'Authorization: token ghp',
                'Accept': 'application/vnd.github.v3+json'}
     request = urllib.request.Request(url, headers=headers)
     json_string = urllib.request.urlopen(request, context=ssl.create_default_context(cafile=certifi.where()))
