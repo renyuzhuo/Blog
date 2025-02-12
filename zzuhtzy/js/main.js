@@ -171,7 +171,7 @@ function go() {
         donate();
         return;
     }
-    if (url.includes("renyuzhuo.cn/index") || url.includes("renyuzhuo.cn/index.html") || url.length == 21 || url.length == 20 || url.includes("127.0.0.1:3000/404.html")) {
+    if (url.includes("renyuzhuo.cn/index") || url.includes("renyuzhuo.cn/index.html") || url.length == 24 || url.length == 23 || url.includes("127.0.0.1:3000/404.html")) {
         console.log("index");
         index();
         return;
