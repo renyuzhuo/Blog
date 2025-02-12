@@ -151,9 +151,9 @@ router.init();
 function go() {
     var url = location.href;
     console.log(url);
-    if (!url.includes("http://renyuzhuo.cn")) {
+    if (!url.includes("http://me.renyuzhuo.cn")) {
         console.log("Not https");
-        location.href = "http://renyuzhuo.cn";
+        location.href = "http://me.renyuzhuo.cn";
         return;
     }
     if (url.includes("renyuzhuo.cn/#/issues")) {
@@ -176,9 +176,9 @@ function go() {
         index();
         return;
     }
-    if (url !== "http://renyuzhuo.cn" && url !== "http://renyuzhuo.cn/") {
+    if (url !== "http://me.renyuzhuo.cn" && url !== "http://me.renyuzhuo.cn/") {
         console.log("404");
-        location.href = "http://renyuzhuo.cn";
+        location.href = "http://me.renyuzhuo.cn";
     }
 
     console.log("return");
