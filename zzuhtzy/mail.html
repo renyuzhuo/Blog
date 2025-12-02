@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact via Email</title>
+  <script>
+    function triggerMail() {
+      const mailto = "mailto:renyuzhuo@foxmail.com"
+        + "?subject=" + encodeURIComponent("Blog Email")
+        + "&body=" + encodeURIComponent("你好，很开心与你建立联系。");
+      window.location.href = mailto;
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      // 页面加载完毕 → 立即尝试 mailto 跳转
+      triggerMail();
+    });
+  </script>
+</head>
+<body>
+  <p>如果自动跳转失败，或你想手动触发，请点击下面按钮：</p>
+  <button id="sendMail">给我发邮件 ✉️</button>
+
+  <script>
+    document.getElementById('sendMail').addEventListener('click', () => {
+      triggerMail();
+    });
+  </script>
+</body>
+</html>
