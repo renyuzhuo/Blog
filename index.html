@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link rel="shortcut icon" href="./favicon.ico"/>
+    <link rel="bookmark" href="./favicon.ico" type="image/x-icon"/>
+
+    <meta name="description" content="感谢我的父母，感谢所有爱过我和帮助过我的人。"/>
+
+    <link rel="stylesheet" type="text/css" href="./zzuhtzy/css/embed.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./zzuhtzy/css/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="./zzuhtzy/css/print.css" media="print">
+    <link rel='stylesheet' type='text/css' href='./zzuhtzy/css/fonts.css'>
+    <link rel='stylesheet' type='text/css' href='./zzuhtzy/css/style.css'>
+    <script src="./zzuhtzy/js/jquery.js"></script>
+    <script src="./zzuhtzy/js/director.min.js"></script>
+    <script src='./zzuhtzy/js/ractive.min.js'></script>
+    <script src="./zzuhtzy/js/marked.min.js"></script>
+    <script src="./zzuhtzy/js/highlight.min.js"></script>
+    <script src="./zzuhtzy/js/main.js"></script>
+
+    <title>Blog</title>
+</head>
+
+<body>
+<div id="container">
+    <div class="inner">
+
+        <header>
+            <a href="/"><h1 id="header_h1">Blog</h1></a>
+        </header>
+        <hr>
+        <section id="main_content">
+            <div id="containergif">
+                <div style="text-align: center;"><img src="./zzuhtzy/images/loading.gif" alt="loading" class="loading">
+                </div>
+            </div>
+            <script type="text/ractive" id="listTpl">
+                <ul class="postlist">
+                    {{#posts}}
+                    <div class="postlist">
+                        <a href="./#/issues/{{number}}">{{title}}</a>
+                        <span class="datetime" style="float:right">{{formatTime(created_at)}}</span>
+                    </div>
+                    <hr>
+                    {{/posts}}
+                </ul>
+            </script>
+            <script type="text/ractive" id="detailTpl">
+                {{#post}}
+                <h1>{{title}}</h1>
+                <span class="create_at">
+                    By <a href="https://github.com/renyuzhuo">RenYuZhuo</a>.&nbsp;&nbsp;{{formatTime(created_at)}}
+                </span>
+                <hr>
+                <div class="content">{{{markdown2HTML(body)}}}</div>
+                <hr>
+                {{/post}}
+            </script>
+        </section>
+        <footer>
+            备案号：<a href="https://beian.miit.gov.cn/">京ICP备2024053830号-3</a>.&nbsp; <span id="footer_title">Blog</span> is maintained by <a href="https://github.com/renyuzhuo">RenYuZhuo</a>.&nbsp;Generated
+            by <a href="https://pages.github.com">GitHub Pages</a>.&nbsp;Tactile theme by <a
+                href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+    </div>
+</div>
+<div class="side-bar">
+    <a href="." class="icon-chat" title="微信公众号">微信
+        <div class="renyuzhuo-chat-tips"><i></i><img style="width:100px;height:100px;"
+                                                     src="./zzuhtzy/images/qrcode_renyuzhuo.jpg" alt="微信公众号"/></div>
+    </a>
+    <a target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=QDIlLjk1Oig1LwAmLzgtISksbiMvLQ&subject=Blog" class="icon-mail">Email</a>
+</div>
+<script type="text/javascript">
+    if (IsPhone()) {
+        $(".side-bar").hide();
+    }
+</script>
+</body>
+</html>
